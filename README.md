@@ -1,5 +1,5 @@
 # after cloning the repo
   
-  cd <Folder Name>
+  cd FOLDER_NAME
   npm i
   npm start
