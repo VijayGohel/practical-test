@@ -5,7 +5,7 @@
 
    <link rel="stylesheet" href="/css/styles.css">
 </head>
-<body>
+<body> 
     
     <form action="/" method="post" id="search-form">
       <div class="search-box">
@@ -46,19 +46,6 @@
         <p>No result found</p>
       <%}%>
 
-      <script >
-        document.getElementById('search-input').onkeydown = function(e){
-        if(e.keyCode == 13){
-          document.getElementById('search-form').submit();
-        }
-     };
-
-      document.getElementsByTagName('body').onkeydown = function(e){
-        if(e.ctrlKey && e.keyCode == 47){
-          document.getElementById("search-input").focus();
-        }
-     };
-
-      </script>
+      <script src="helper.js"></script>
 </body>
 </html>
