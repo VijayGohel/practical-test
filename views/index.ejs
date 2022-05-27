@@ -13,13 +13,16 @@
         <div class="search-sc">Ctrl + /</div>
       </div>
 
-        <!-- <input type="number" name="noOfCities" id="no-cities" value="5" max="10" min="1"> -->
+      <div class="CitiesCount">
+        <label for="noOfCities">No. of places: </label>
+        <input type="number" name="noOfCities" id="no-cities" value="<%= places? places.length : '5'%>" max="10" min="1">
+      </div>
     </form>
 
     
     <% if(places && places.length != 0) {%>
 
-    <table class="table table-responsive">
+    <table class="table table-responsive tablemanager" id="table">
         <thead>
           <tr>
             <th >#</th>
@@ -47,5 +50,21 @@
       <%}%>
 
       <script src="helper.js"></script>
+
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+      <script type="text/javascript" src="tableManager.js"></script>
+
+      <script type="text/javascript">
+
+        $('.tablemanager').tablemanager({
+          vocabulary: {
+            voc_show_rows: 'Places per page'
+          },
+          pagination: true,
+          showrows: [3,5,10,20,50,100],
+          disableFilterBy: [1]
+        });
+      </script>
+    
 </body>
 </html>

@@ -15,8 +15,8 @@ body
 {
     display: flex;
     gap:1rem;
-    /* width: 80%; */
     margin-bottom: 20px;
+    align-items: center;
 }
 
 .search-box
@@ -58,11 +58,17 @@ body
     padding: 5px;
 }
 
+.CitiesCount
+{
+    display: flex;
+    gap: 0.5rem;
+}
+
 /*Table*/
 
 .table {
-    width: 100%;
-    max-width: 100%;
+    width: 50%;
+    min-width: 350px;
     margin-bottom: 1rem;
   }
  
@@ -85,4 +91,3 @@ body
 {
     width: 20px;
 }
-  
