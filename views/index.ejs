@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <title>Search Places</title>
+
+   <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    
+    <form action="/" method="post" id="search-form">
+      <div class="search-box">
+        <input type="text" name="searchInput" id="search-input" placeholder="Search places...">
+        <div class="search-sc">Ctrl + /</div>
+      </div>
+
+        <!-- <input type="number" name="noOfCities" id="no-cities" value="5" max="10" min="1"> -->
+    </form>
+
+    
+    <% if(places && places.length != 0) {%>
+
+    <table class="table table-responsive">
+        <thead>
+          <tr>
+            <th >#</th>
+            <th >Place Name</th>
+            <th >Country</th>
+          </tr>
+        </thead>
+        <tbody>
+            
+          <% places.forEach((place,index)=>{%>
+          <tr>
+            <td class="index"><%=index+1%></td>
+            <td><%=place.name%></td>
+            <td><%=place.country%> 
+              <img src="https://countryflagsapi.com/png/in" alt="country flag" class="country-flag">
+            </td>
+          </tr>
+          <%});%>
+        </tbody>
+      </table>
+      <%} else if(!places){%>
+        <p>Start searching</p>
+      <%} else{%>
+        <p>No result found</p>
+      <%}%>
+
+      <script >
+        document.getElementById('search-input').onkeydown = function(e){
+        if(e.keyCode == 13){
+          document.getElementById('search-form').submit();
+        }
+     };
+
+      document.getElementsByTagName('body').onkeydown = function(e){
+        if(e.ctrlKey && e.keyCode == 47){
+          document.getElementById("search-input").focus();
+        }
+     };
+
+      </script>
+</body>
+</html>
